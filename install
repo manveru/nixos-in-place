@@ -176,4 +176,6 @@ popd
 log_start "Reboot into NixOS now? [yn] "
 read -n 1 -r || REPLY=n
 log_end
-[[ $REPLY =~ ^[Yy]$ ]] && reboot
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  reboot
+fi
